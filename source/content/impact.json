@@ -1,0 +1,167 @@
+{
+  "as_of": "2026-10-26",
+  "source": "https://scholar.google.com/citations?user=c83p77gAAAAJ&hl=en",
+  "citations": 144,
+  "h_index": 6,
+  "i10_index": 4,
+  "papers": {
+    "latent-bridge": {
+      "count": 5,
+      "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=7215072998878705583"
+    },
+    "stochasticity": {
+      "count": 13,
+      "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=7696117392303176862,999228022907012312"
+    },
+    "motion-risk": {
+      "count": 5,
+      "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=18151513460568622823"
+    },
+    "edge": {
+      "count": 6,
+      "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=17143982825397459950,17491845723713283552"
+    },
+    "bosch-street": {
+      "count": 10,
+      "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=5718214530071201240"
+    },
+    "text-trajectory": {
+      "count": 47,
+      "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=1087912709561002658"
+    },
+    "graphvid": {
+      "count": 6,
+      "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=10252528211986001834"
+    },
+    "mining": {
+      "count": 1,
+      "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=3416991345535982418"
+    },
+    "oil-spills": {
+      "count": 33,
+      "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=2931873399735564404"
+    },
+    "lsp": {
+      "count": 7,
+      "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=187867757672453606,4118961853186669242"
+    },
+    "vision-forecasting": {
+      "count": 1,
+      "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&oe=ASCII&cites=13364858743660540056"
+    }
+  },
+  "repositories": [
+    {
+      "name": "AnomalyDetectionCVPR2018-Pytorch",
+      "stars": 193,
+      "forks": 67,
+      "url": "https://github.com/ekosman/AnomalyDetectionCVPR2018-Pytorch",
+      "description": "Pytorch version of - https://github.com/WaqasSultani/AnomalyDetectionCVPR2018"
+    },
+    {
+      "name": "image-Retrieval",
+      "stars": 4,
+      "forks": 0,
+      "url": "https://github.com/ekosman/image-Retrieval",
+      "description": "Implementation of image retrieval using deep image features and KNN"
+    },
+    {
+      "name": "KHMRegressionClustering",
+      "stars": 4,
+      "forks": 1,
+      "url": "https://github.com/ekosman/KHMRegressionClustering",
+      "description": "Python version of - https://ieeexplore.ieee.org/document/1250952"
+    },
+    {
+      "name": "CarNet",
+      "stars": 3,
+      "forks": 0,
+      "url": "https://github.com/ekosman/CarNet",
+      "description": "Winter 18-19 Technion Project"
+    },
+    {
+      "name": "ComputerVision",
+      "stars": 2,
+      "forks": 0,
+      "url": "https://github.com/ekosman/ComputerVision",
+      "description": "Public code and experiments."
+    },
+    {
+      "name": "Data_Structures",
+      "stars": 2,
+      "forks": 0,
+      "url": "https://github.com/ekosman/Data_Structures",
+      "description": "Public code and experiments."
+    },
+    {
+      "name": "ekosman",
+      "stars": 2,
+      "forks": 0,
+      "url": "https://github.com/ekosman/ekosman",
+      "description": "Public code and experiments."
+    },
+    {
+      "name": "Exploiting-the-power-of-Deep-Image-Prior-for-Neural-Style-Transfer",
+      "stars": 2,
+      "forks": 0,
+      "url": "https://github.com/ekosman/Exploiting-the-power-of-Deep-Image-Prior-for-Neural-Style-Transfer",
+      "description": "Exploiting the power of Deep Image Prior for Neural Style Transfer"
+    },
+    {
+      "name": "Fully-Connected-with-Numpy",
+      "stars": 2,
+      "forks": 0,
+      "url": "https://github.com/ekosman/Fully-Connected-with-Numpy",
+      "description": "This class is an implementation of fully connected network with numpy only"
+    },
+    {
+      "name": "GraphVid",
+      "stars": 2,
+      "forks": 0,
+      "url": "https://github.com/ekosman/GraphVid",
+      "description": "Public code and experiments."
+    },
+    {
+      "name": "learning_models",
+      "stars": 2,
+      "forks": 0,
+      "url": "https://github.com/ekosman/learning_models",
+      "description": "Several implementations of learning algorithms"
+    },
+    {
+      "name": "pytorch-architectures",
+      "stars": 2,
+      "forks": 0,
+      "url": "https://github.com/ekosman/pytorch-architectures",
+      "description": "Collection of various pytorch architectures"
+    },
+    {
+      "name": "SEEN",
+      "stars": 1,
+      "forks": 1,
+      "url": "https://github.com/ekosman/SEEN",
+      "description": "Public code and experiments."
+    },
+    {
+      "name": "3DScanner",
+      "stars": 0,
+      "forks": 0,
+      "url": "https://github.com/ekosman/3DScanner",
+      "description": "Public code and experiments."
+    },
+    {
+      "name": "KineticsDownloader",
+      "stars": 0,
+      "forks": 0,
+      "url": "https://github.com/ekosman/KineticsDownloader",
+      "description": "Public code and experiments."
+    },
+    {
+      "name": "mmdet_config_visualizer",
+      "stars": 0,
+      "forks": 0,
+      "url": "https://github.com/ekosman/mmdet_config_visualizer",
+      "description": "A tool for visualizing mmdet configs"
+    }
+  ]
+}

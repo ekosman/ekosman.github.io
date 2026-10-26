@@ -1,0 +1,163 @@
+[
+  {
+    "id": "US12284397B2",
+    "title": "Lossy compression of video content into a graph representation",
+    "year": 2025,
+    "type": "Granted patent",
+    "date": "22 April 2025",
+    "inventors": [
+      "Dotan Di Castro",
+      "Eitan Kosman"
+    ],
+    "summary": "Compressing video into graphs of superpixels with spatial and temporal relationships.",
+    "url": "https://patents.google.com/patent/US12284397B2/en",
+    "assignee": "Robert Bosch GmbH"
+  },
+  {
+    "id": "US20260070577A1",
+    "title": "Computer-implemented method for generating a control command for an autonomous vehicle",
+    "year": 2026,
+    "type": "Published application",
+    "inventors": [
+      "Ali Keysan",
+      "Barbara Rakitsch",
+      "Andreas Look",
+      "Eitan Kosman"
+    ],
+    "url": "https://patents.google.com/patent/US20260070577A1/en",
+    "assignee": "Robert Bosch GmbH"
+  },
+  {
+    "id": "US20260035020A1",
+    "title": "Method for ascertaining potential trajectories when controlling a robot device",
+    "year": 2026,
+    "type": "Published application",
+    "inventors": [
+      "Aron Distelzweig",
+      "Andreas Look",
+      "Eitan Kosman"
+    ],
+    "url": "https://patents.google.com/patent/US20260035020A1/en",
+    "assignee": "Robert Bosch GmbH"
+  },
+  {
+    "id": "US20250272546A1",
+    "title": "Using diffusion model to generate graph data",
+    "year": 2025,
+    "type": "Published application",
+    "inventors": [
+      "Eitan Kosman",
+      "Dotan Di Castro",
+      "Nimrod Berman"
+    ],
+    "url": "https://patents.google.com/patent/US20250272546A1/en",
+    "assignee": "Robert Bosch GmbH"
+  },
+  {
+    "id": "US20250103883A1",
+    "title": "Device and method for driving assisting or autonomous driving functions",
+    "year": 2025,
+    "type": "Published application",
+    "inventors": [
+      "Gonca Guersun",
+      "Barbara Rakitsch",
+      "Eitan Kosman",
+      "Joerg Wagner",
+      "Michael Herman",
+      "Yu Yao"
+    ],
+    "url": "https://patents.google.com/patent/US20250103883A1/en",
+    "assignee": "Robert Bosch GmbH"
+  },
+  {
+    "id": "DE102023205534A1",
+    "title": "Procedure for creating an application-specific machine learning model",
+    "year": 2024,
+    "type": "Published application",
+    "inventors": [
+      "Yu Yao",
+      "Joerg Wagner",
+      "Gonca Guersun",
+      "Avinash Kumar",
+      "Barbara Rakitsch",
+      "Eitan Kosman"
+    ],
+    "url": "https://patents.google.com/patent/DE102023205534A1/en",
+    "assignee": "Robert Bosch GmbH"
+  },
+  {
+    "id": "EP4456365A1",
+    "title": "Predicting supply and/or demand of physical commodities in a distribution network",
+    "year": 2024,
+    "type": "Published application",
+    "inventors": [
+      "Dotan Di Castro",
+      "Eitan Kosman",
+      "Noam Koren"
+    ],
+    "url": "https://patents.google.com/patent/EP4456365A1/en",
+    "assignee": "Robert Bosch GmbH"
+  },
+  {
+    "id": "US20240119284A1",
+    "title": "Method for training a machine learning model",
+    "year": 2024,
+    "type": "Published application",
+    "inventors": [
+      "Joerg Wagner",
+      "Nils Oliver Ferguson",
+      "Stephan Scheiderer",
+      "Yu Yao",
+      "Avinash Kumar",
+      "Barbara Rakitsch",
+      "Eitan Kosman",
+      "Gonca Guersun",
+      "Michael Herman"
+    ],
+    "url": "https://patents.google.com/patent/US20240119284A1/en",
+    "assignee": "Robert Bosch GmbH"
+  },
+  {
+    "id": "US20240095597A1",
+    "title": "Method for generating additional training data for training a machine learning algorithm",
+    "year": 2024,
+    "type": "Published application",
+    "inventors": [
+      "Eitan Kosman",
+      "Amulya Hiremath",
+      "Barbara Rakitsch",
+      "Gonca Guersun",
+      "Joerg Wagner",
+      "Michael Herman",
+      "Yu Yao"
+    ],
+    "url": "https://patents.google.com/patent/US20240095597A1/en",
+    "assignee": "Robert Bosch GmbH"
+  },
+  {
+    "id": "EP4238714A1",
+    "title": "Device and method for controlling a robot",
+    "year": 2023,
+    "type": "Published application",
+    "inventors": [
+      "Yuri Feldman",
+      "Yoel Shapiro",
+      "Eitan Kosman"
+    ],
+    "url": "https://patents.google.com/patent/EP4238714A1/en",
+    "assignee": "Robert Bosch GmbH"
+  },
+  {
+    "id": "US20230101250A1",
+    "title": "Method for generating a graph structure for training a graph neural network",
+    "year": 2023,
+    "type": "Published application",
+    "inventors": [
+      "Eitan Kosman",
+      "Dotan Di Castro",
+      "Joel Oren"
+    ],
+    "url": "https://patents.google.com/patent/US20230101250A1/en",
+    "assignee": "Robert Bosch GmbH"
+  }
+]
