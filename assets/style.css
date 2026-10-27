@@ -31,3 +31,5 @@ dialog{width:min(660px,calc(100% - 36px));max-height:90vh;border:1px solid var(-
 @media(min-width:621px){.portrait-playground{max-width:300px}.portrait-playground .diffusion-stages,.portrait-playground .plot-note{display:none}}
 
 .header-actions{gap:8px}.social-icon{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;color:white;transition:background .2s,transform .2s}.social-icon:hover{background:#ffffff1c;transform:translateY(-2px)}.header-actions .header-contact{margin-left:12px}@media(max-width:620px){.nav-top{gap:6px}.wordmark{font-size:19px;letter-spacing:-.7px}.header-actions{display:flex;gap:1px;margin-left:auto}.header-actions .social-icon{width:28px;height:36px}.social-icon svg{width:18px;height:18px}.header-actions .header-contact{display:none}.menu-toggle{gap:6px;padding:6px 8px;font-size:11px}.menu-toggle span{font-size:16px}}
+
+.hero-intro{font-size:14px;line-height:1.8}@media(max-width:620px){.hero-intro{font-size:13px;line-height:1.8}}
