@@ -92,3 +92,5 @@ Visual inspiration: Booking.com navigation, blue and yellow palette, search emph
 The portrait is the original photo supplied by Eitan in this conversation. The browser illustrates a diffusion path by mixing the photo with a fixed Gaussian noise sample using a cosine schedule. It does not run a trained denoising model. The original photo appears if canvas pixel access is unavailable.
 
 Biography updated from the text supplied directly by Eitan on 27 October 2026. Research engineering at Bosch dates from 2021; the earlier 2020 internship remains in the detailed career history. INSIGHT Lab doctoral affiliation dates from 2025, and Google research from 2026.
+
+Five additional user supplied photos join the original portrait. Each loop and New image action randomly selects a different available photo and a fresh noise sample. Photos are rendered in canvas, with no generated or substituted faces.

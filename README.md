@@ -15,7 +15,7 @@ The separate `Eitan_Kosman_Blue_Preview.html` file is a portable preview with em
 ## Features
 
 * Responsive layout with mobile navigation.
-* Interactive portrait diffusion with noise stages, a reveal slider, pause and replay.
+* Interactive diffusion randomly reveals one of six photos each cycle, with noise stages, a reveal slider, pause and a New image button.
 * Publication search by title, author, venue, and year.
 * Topic filters and a full downloadable BibTeX bibliography.
 * Citation dialogs with copy and individual download actions.
@@ -70,7 +70,7 @@ Open `http://localhost:8000/`. Clipboard permissions vary by browser when using 
 
 ## Design notes
 
-This alternate theme takes inspiration from Booking.com's strong blue navigation, yellow search frame and white content cards. All branding and content identify Eitan Kosman. The discovery bar filters the publication archive by keyword and research area. The portrait emerges from noise, with pause, replay, clickable stages and a slider. Reduced motion preferences show the clear portrait without autoplay. This version is saved separately from the earlier midnight theme.
+This alternate theme takes inspiration from Booking.com's strong blue navigation, yellow search frame and white content cards. All branding and content identify Eitan Kosman. The discovery bar filters the publication archive by keyword and research area. One of six user supplied photos emerges from noise each cycle. Photos are chosen randomly without immediate repeats, with pause, a New image button, clickable stages and a slider. Reduced motion preferences show the clear portrait without autoplay. This version is saved separately from the earlier midnight theme.
 
 Prepared 26 October 2026. See `SOURCE_NOTES.md` for content scope and provenance.
 

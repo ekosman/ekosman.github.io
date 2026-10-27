@@ -135,6 +135,8 @@ document.documentElement.classList.add('js');
   const sourceContext = source.getContext('2d', {willReadFrequently:true});
   let pixels, noise, output, ready = false, playing = false, inView = true;
   let frame = 0, previous = 0, elapsed = 0, lastDraw = 0;
+  const scenes = [];
+  let currentScene = -1;
   const duration = 10000;
   // Ease out: establish the face quickly, then spend more time on fine details.
   const revealAt = u => 100 * (1 - Math.pow(1 - u, 2.4));
@@ -163,7 +165,11 @@ document.documentElement.classList.add('js');
   const tick = timestamp => {
     frame=0;
     if (!playing || !inView || document.hidden) {previous=0;return;}
-    if (previous) elapsed=(elapsed+Math.min(timestamp-previous,100))%duration;
+    if (previous) {
+      const next = elapsed + Math.min(timestamp-previous,100);
+      if (next >= duration) chooseScene();
+      elapsed = next % duration;
+    }
     previous=timestamp;
     if(timestamp-lastDraw>=50){slider.value=valueAt(elapsed);draw();lastDraw=timestamp;}
     frame=requestAnimationFrame(tick);
@@ -179,37 +185,58 @@ document.documentElement.classList.add('js');
   const select = value => {setPlaying(false);slider.value=value;elapsed=400+6000*(1-Math.pow(1-Number(value)/100,1/2.4));draw();};
   slider.addEventListener('input',()=>select(slider.value));
   stageButtons.forEach(button=>button.addEventListener('click',()=>select(button.dataset.progress)));
-  play.addEventListener('click',()=>{if(!playing && Number(slider.value)>=99)elapsed=0;setPlaying(!playing);});
-  replay.addEventListener('click',()=>{elapsed=0;slider.value=0;draw();setPlaying(true);});
+  play.addEventListener('click',()=>{if(!playing && Number(slider.value)>=99){elapsed=0;chooseScene();}setPlaying(!playing);});
+  replay.addEventListener('click',()=>{chooseScene();elapsed=0;slider.value=0;draw();setPlaying(true);});
   document.addEventListener('visibilitychange',()=>{previous=0;schedule();});
   reduced.addEventListener('change',e=>{if(e.matches){setPlaying(false);select(100);}});
   if('IntersectionObserver' in window)new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;previous=0;schedule();}).observe(canvas);
-  const initialize = () => {
-    if(ready || !portrait.naturalWidth)return;
-    try {
-      // A landscape crop keeps the face and shoulders central in the illustration.
-      const sw=portrait.naturalWidth, sh=sw*height/width;
-      const sy=Math.max(0,Math.min(portrait.naturalHeight-sh,portrait.naturalHeight*.20));
-      sourceContext.drawImage(portrait,0,sy,sw,sh,0,0,width,height);
-      pixels=sourceContext.getImageData(0,0,width,height).data;
-      output=sourceContext.createImageData(width,height);
-      noise=new Float32Array(width*height);
-      let seed=2026;
-      const random=()=>{seed=(1664525*seed+1013904223)>>>0;return (seed+1)/4294967297;};
-      for(let i=0;i<noise.length;i++)noise[i]=Math.sqrt(-2*Math.log(random()))*Math.cos(2*Math.PI*random());
-      stageButtons.forEach(button=>{
-        paint(Number(button.dataset.progress));
-        const thumb=button.querySelector('canvas');
-        thumb.getContext('2d').drawImage(source,0,0,thumb.width,thumb.height);
-      });
-      ready=true;
-      slider.value=reduced.matches?100:0;
-      draw();canvas.parentElement.classList.add('canvas-ready');
-      document.querySelector('.portrait-controls').classList.add('is-ready');
-      setPlaying(!reduced.matches);
-    }catch { /* Keep the original portrait visible when pixel access is unavailable. */ }
+  const chooseScene = () => {
+    if (!scenes.length) return;
+    // Uniformly choose another available photo, avoiding back-to-back repeats.
+    const candidates = scenes.map((_, i)=>i).filter(i=>i!==currentScene);
+    currentScene = candidates.length ? candidates[Math.floor(Math.random()*candidates.length)] : 0;
+    pixels = scenes[currentScene];
+    canvas.dataset.scene = String(currentScene);
+    let seed = Math.floor(Math.random()*4294967296);
+    const random=()=>{seed=(1664525*seed+1013904223)>>>0;return (seed+1)/4294967297;};
+    for(let i=0;i<noise.length;i++)noise[i]=Math.sqrt(-2*Math.log(random()))*Math.cos(2*Math.PI*random());
+    stageButtons.forEach(button=>{
+      paint(Number(button.dataset.progress));
+      const thumb=button.querySelector('canvas');
+      thumb.getContext('2d').drawImage(source,0,0,thumb.width,thumb.height);
+    });
   };
-  portrait.addEventListener('load',initialize,{once:true});
+  const loadImage = image => new Promise(resolve => {
+    if (image.complete) {resolve(image.naturalWidth ? image : null);return;}
+    image.addEventListener('load',()=>resolve(image),{once:true});
+    image.addEventListener('error',()=>resolve(null),{once:true});
+  });
+  const initialize = async () => {
+    const images = await Promise.all([portrait,...document.querySelectorAll('#portrait-gallery img')].map(loadImage));
+    for (const image of images.filter(Boolean)) {
+      try {
+        sourceContext.fillStyle='#002654';sourceContext.fillRect(0,0,width,height);
+        const iw=image.naturalWidth, ih=image.naturalHeight;
+        if (image.dataset.fit==='contain') {
+          const scale=Math.min(width/iw,height/ih), w=iw*scale, h=ih*scale;
+          sourceContext.drawImage(image,(width-w)/2,(height-h)/2,w,h);
+        } else {
+          const scale=Math.max(width/iw,height/ih), sw=width/scale, sh=height/scale;
+          const sy=image===portrait ? Math.min(ih-sh,ih*.20) : (ih-sh)*Number(image.dataset.y||.5);
+          sourceContext.drawImage(image,(iw-sw)/2,Math.max(0,sy),sw,sh,0,0,width,height);
+        }
+        scenes.push(new Uint8ClampedArray(sourceContext.getImageData(0,0,width,height).data));
+      } catch { /* Skip any photo whose pixels cannot be read. */ }
+    }
+    if (!scenes.length) return; // Keep the original photo visible as a fallback.
+    output=sourceContext.createImageData(width,height);
+    noise=new Float32Array(width*height);
+    chooseScene();ready=true;
+    slider.value=reduced.matches?100:0;
+    draw();canvas.parentElement.classList.add('canvas-ready');
+    document.querySelector('.portrait-controls').classList.add('is-ready');
+    setPlaying(!reduced.matches);
+  };
   initialize();
 })();
 
