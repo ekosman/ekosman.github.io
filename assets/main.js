@@ -137,6 +137,9 @@ document.documentElement.classList.add('js');
   let frame = 0, previous = 0, elapsed = 0, lastDraw = 0;
   const scenes = [];
   let currentScene = -1;
+  let sceneBag = [];
+  let previousPhoto = null;
+  try { previousPhoto = sessionStorage.getItem('eitan-last-photo'); } catch {}
   const duration = 10000;
   // Ease out: establish the face quickly, then spend more time on fine details.
   const revealAt = u => 100 * (1 - Math.pow(1 - u, 2.4));
@@ -192,10 +195,22 @@ document.documentElement.classList.add('js');
   if('IntersectionObserver' in window)new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;previous=0;schedule();}).observe(canvas);
   const chooseScene = () => {
     if (!scenes.length) return;
-    // Uniformly choose another available photo, avoiding back-to-back repeats.
-    const candidates = scenes.map((_, i)=>i).filter(i=>i!==currentScene);
-    currentScene = candidates.length ? candidates[Math.floor(Math.random()*candidates.length)] : 0;
-    pixels = scenes[currentScene];
+    // Visit all available photos in shuffled order before repeating one.
+    if (!sceneBag.length) {
+      sceneBag = scenes.map((_, i)=>i);
+      for (let i=sceneBag.length-1;i>0;i--) {
+        const j=Math.floor(Math.random()*(i+1));
+        [sceneBag[i],sceneBag[j]]=[sceneBag[j],sceneBag[i]];
+      }
+      if (sceneBag.length>1 && scenes[sceneBag[0]].id===previousPhoto) {
+        [sceneBag[0],sceneBag[1]]=[sceneBag[1],sceneBag[0]];
+      }
+    }
+    currentScene = sceneBag.shift();
+    pixels = scenes[currentScene].pixels;
+    previousPhoto = scenes[currentScene].id;
+    try { sessionStorage.setItem('eitan-last-photo',previousPhoto); } catch {}
+    canvas.dataset.sceneCount = String(scenes.length);
     canvas.dataset.scene = String(currentScene);
     let seed = Math.floor(Math.random()*4294967296);
     const random=()=>{seed=(1664525*seed+1013904223)>>>0;return (seed+1)/4294967297;};
@@ -225,7 +240,7 @@ document.documentElement.classList.add('js');
           const sy=image===portrait ? Math.min(ih-sh,ih*.20) : (ih-sh)*Number(image.dataset.y||.5);
           sourceContext.drawImage(image,(iw-sw)/2,Math.max(0,sy),sw,sh,0,0,width,height);
         }
-        scenes.push(new Uint8ClampedArray(sourceContext.getImageData(0,0,width,height).data));
+        scenes.push({id:'photo-'+scenes.length,pixels:new Uint8ClampedArray(sourceContext.getImageData(0,0,width,height).data)});
       } catch { /* Skip any photo whose pixels cannot be read. */ }
     }
     if (!scenes.length) return; // Keep the original photo visible as a fallback.

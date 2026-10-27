@@ -70,7 +70,7 @@ Open `http://localhost:8000/`. Clipboard permissions vary by browser when using 
 
 ## Design notes
 
-This alternate theme takes inspiration from Booking.com's strong blue navigation, yellow search frame and white content cards. All branding and content identify Eitan Kosman. The discovery bar filters the publication archive by keyword and research area. One of six user supplied photos emerges from noise each cycle. Photos are chosen randomly without immediate repeats, with pause, a New image button, clickable stages and a slider. Reduced motion preferences show the clear portrait without autoplay. This version is saved separately from the earlier midnight theme.
+This alternate theme takes inspiration from Booking.com's strong blue navigation, yellow search frame and white content cards. All branding and content identify Eitan Kosman. The discovery bar filters the publication archive by keyword and research area. One of six user supplied photos emerges from noise each cycle. Photos are shuffled so every photo appears before the next round, without immediate repeats, with pause, a New image button, clickable stages and a slider. Reduced motion preferences show the clear portrait without autoplay. This version is saved separately from the earlier midnight theme.
 
 Prepared 26 October 2026. See `SOURCE_NOTES.md` for content scope and provenance.
 
