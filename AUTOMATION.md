@@ -61,7 +61,7 @@ You can correct topics or metadata directly on the PR branch. Later runs append
 new records and merge `main` into that branch without force-pushing or overwriting
 your edits. A merge conflict stops the review job for manual resolution and does
 not block the separate Pages deployment. If you close the PR without merging,
-proposals pause until you reopen it.
+the next refresh opens a new PR when pending content changes remain.
 
 To reject an individual proposal permanently, remove it from the JSON and add
 its DBLP `source_key` or patent publication number to the array in
