@@ -173,5 +173,35 @@
     ],
     "url": "https://patents.google.com/patent/US20230101250A1/en",
     "assignee": "Robert Bosch GmbH"
+  },
+  {
+    "id": "EP4113367A1",
+    "title": "Predicting vehicle state variables based on fusion with video frames",
+    "year": 2023,
+    "type": "Published application",
+    "date": "4 January 2023",
+    "inventors": [
+      "Dotan Di Castro",
+      "Eitan Kosman"
+    ],
+    "url": "https://patents.google.com/patent/EP4113367A1/en",
+    "assignee": "Robert Bosch GmbH"
+  },
+  {
+    "id": "US20240378438A1",
+    "title": "Training a neural network system to predict the behavior of interacting agents",
+    "year": 2024,
+    "type": "Published application",
+    "date": "14 November 2024",
+    "inventors": [
+      "Eitan Kosman",
+      "Avinash Kumar",
+      "Barbara Rakitsch",
+      "Gonca Guersun",
+      "Joerg Wagner",
+      "Yu Yao"
+    ],
+    "url": "https://patents.google.com/patent/US20240378438A1/en",
+    "assignee": "Robert Bosch GmbH"
   }
 ]
