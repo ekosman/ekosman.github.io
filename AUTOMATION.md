@@ -35,7 +35,7 @@ dated snapshot, and patent discovery is explicitly marked unconfigured.
 | GitHub repositories | Refresh saved descriptions, cards, stars and forks for owned public repositories, excluding forks; feature the top three by stars |
 | Scholar totals | Refresh citations, h-index and i10-index through SerpApi |
 | Per-paper citations | Match exact normalized titles or explicit aliases; refresh unambiguous matches and retain unmatched badges' original dates |
-| New publications | Check DBLP and propose content additions in one review PR |
+| New publications | Check DBLP, falling back to the official arXiv API when DBLP is unavailable, and propose additions in one review PR |
 | New patents | Search Google Patents, verify full inventor details, and propose additions or grant upgrades in that PR |
 | Source edits | Rebuild the page and BibTeX on every push to `main` |
 | Deployment | Publish the generated public files to GitHub Pages |
@@ -44,6 +44,9 @@ New papers, venue changes, grants, and patent families require editorial review.
 The script adds proposals on a review branch; they enter the public archive only
 after you merge. It does not infer legal status beyond the publication kind code.
 Title changes and national equivalents make blind imports prone to duplicates.
+DBLP may return an HTML bot challenge instead of its XML export; the updater
+recognizes this and uses arXiv. That fallback discovers preprints, with no claim
+to cover later conference or journal acceptance information.
 Existing curated bibliography and featured descriptions are preserved. DBLP can
 lag publishers, so discovery is not an exhaustive guarantee.
 
