@@ -53,115 +53,123 @@
   "repositories": [
     {
       "name": "AnomalyDetectionCVPR2018-Pytorch",
-      "stars": 193,
-      "forks": 67,
       "url": "https://github.com/ekosman/AnomalyDetectionCVPR2018-Pytorch",
-      "description": "Pytorch version of - https://github.com/WaqasSultani/AnomalyDetectionCVPR2018"
+      "description": "Pytorch version of - https://github.com/WaqasSultani/AnomalyDetectionCVPR2018",
+      "stars": 193,
+      "forks": 67
     },
     {
       "name": "image-Retrieval",
-      "stars": 4,
-      "forks": 0,
       "url": "https://github.com/ekosman/image-Retrieval",
-      "description": "Implementation of image retrieval using deep image features and KNN"
+      "description": "Implementation of image retrieval using deep image features and KNN",
+      "stars": 4,
+      "forks": 0
     },
     {
       "name": "KHMRegressionClustering",
-      "stars": 4,
-      "forks": 1,
       "url": "https://github.com/ekosman/KHMRegressionClustering",
-      "description": "Python version of - https://ieeexplore.ieee.org/document/1250952"
+      "description": "Python version of - https://ieeexplore.ieee.org/document/1250952",
+      "stars": 4,
+      "forks": 1
     },
     {
       "name": "CarNet",
-      "stars": 3,
-      "forks": 0,
       "url": "https://github.com/ekosman/CarNet",
-      "description": "Winter 18-19 Technion Project"
+      "description": "Winter 18-19 Technion Project",
+      "stars": 3,
+      "forks": 0
     },
     {
       "name": "ComputerVision",
-      "stars": 2,
-      "forks": 0,
       "url": "https://github.com/ekosman/ComputerVision",
-      "description": "Public code and experiments."
+      "description": "Public code and experiments.",
+      "stars": 2,
+      "forks": 0
     },
     {
       "name": "Data_Structures",
-      "stars": 2,
-      "forks": 0,
       "url": "https://github.com/ekosman/Data_Structures",
-      "description": "Public code and experiments."
+      "description": "Public code and experiments.",
+      "stars": 2,
+      "forks": 0
     },
     {
       "name": "ekosman",
-      "stars": 2,
-      "forks": 0,
       "url": "https://github.com/ekosman/ekosman",
-      "description": "Public code and experiments."
+      "description": "Public code and experiments.",
+      "stars": 2,
+      "forks": 0
     },
     {
       "name": "Exploiting-the-power-of-Deep-Image-Prior-for-Neural-Style-Transfer",
-      "stars": 2,
-      "forks": 0,
       "url": "https://github.com/ekosman/Exploiting-the-power-of-Deep-Image-Prior-for-Neural-Style-Transfer",
-      "description": "Exploiting the power of Deep Image Prior for Neural Style Transfer"
+      "description": "Exploiting the power of Deep Image Prior for Neural Style Transfer",
+      "stars": 2,
+      "forks": 0
     },
     {
       "name": "Fully-Connected-with-Numpy",
-      "stars": 2,
-      "forks": 0,
       "url": "https://github.com/ekosman/Fully-Connected-with-Numpy",
-      "description": "This class is an implementation of fully connected network with numpy only"
+      "description": "This class is an implementation of fully connected network with numpy only",
+      "stars": 2,
+      "forks": 0
     },
     {
       "name": "GraphVid",
-      "stars": 2,
-      "forks": 0,
       "url": "https://github.com/ekosman/GraphVid",
-      "description": "Public code and experiments."
+      "description": "Public code and experiments.",
+      "stars": 2,
+      "forks": 0
     },
     {
       "name": "learning_models",
-      "stars": 2,
-      "forks": 0,
       "url": "https://github.com/ekosman/learning_models",
-      "description": "Several implementations of learning algorithms"
+      "description": "Several implementations of learning algorithms",
+      "stars": 2,
+      "forks": 0
     },
     {
       "name": "pytorch-architectures",
-      "stars": 2,
-      "forks": 0,
       "url": "https://github.com/ekosman/pytorch-architectures",
-      "description": "Collection of various pytorch architectures"
+      "description": "Collection of various pytorch architectures",
+      "stars": 2,
+      "forks": 0
     },
     {
       "name": "SEEN",
-      "stars": 1,
-      "forks": 1,
       "url": "https://github.com/ekosman/SEEN",
-      "description": "Public code and experiments."
+      "description": "Public code and experiments.",
+      "stars": 1,
+      "forks": 1
     },
     {
       "name": "3DScanner",
-      "stars": 0,
-      "forks": 0,
       "url": "https://github.com/ekosman/3DScanner",
-      "description": "Public code and experiments."
+      "description": "Public code and experiments.",
+      "stars": 0,
+      "forks": 0
+    },
+    {
+      "name": "ekosman.github.io",
+      "url": "https://github.com/ekosman/ekosman.github.io",
+      "description": "Public code and experiments.",
+      "stars": 0,
+      "forks": 0
     },
     {
       "name": "KineticsDownloader",
-      "stars": 0,
-      "forks": 0,
       "url": "https://github.com/ekosman/KineticsDownloader",
-      "description": "Public code and experiments."
+      "description": "Public code and experiments.",
+      "stars": 0,
+      "forks": 0
     },
     {
       "name": "mmdet_config_visualizer",
-      "stars": 0,
-      "forks": 0,
       "url": "https://github.com/ekosman/mmdet_config_visualizer",
-      "description": "A tool for visualizing mmdet configs"
+      "description": "A tool for visualizing mmdet configs",
+      "stars": 0,
+      "forks": 0
     }
-  ]
+  ],
+  "github_as_of": "2026-10-28"
 }
