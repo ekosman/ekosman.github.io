@@ -59,7 +59,8 @@ class RefreshTests(unittest.TestCase):
         with patch.object(refresh, 'serpapi', side_effect=responses) as request:
             self.assertEqual(refresh.discover_patents([]), [])
         first = request.call_args_list[0].kwargs
-        self.assertEqual(first['q'], 'inventor:(Eitan Kosman)')
+        self.assertEqual(first['q'], '(Eitan Kosman)')
+        self.assertEqual(first['inventor'], 'Eitan Kosman')
         self.assertNotIn('page', first)
         self.assertEqual(request.call_args_list[1].kwargs['page'], 1)
 

@@ -249,7 +249,7 @@ def discover_patents(patents):
     seen = set()
     for _ in range(10):
         # Supply a search query explicitly; inventor-only requests can be rejected.
-        params = {'q': 'inventor:(Eitan Kosman)', 'num': 100}
+        params = {'q': '(Eitan Kosman)', 'inventor': 'Eitan Kosman', 'num': 100}
         if page is not None:
             params['page'] = page
         data = serpapi('google_patents', **params)
