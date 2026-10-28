@@ -1,5 +1,9 @@
 # Publish your website on GitHub Pages
 
+**For automatic builds and weekly refreshes, follow [AUTOMATION.md](AUTOMATION.md).**
+Select **GitHub Actions** as the Pages source for the new workflow. The older
+branch-based steps below apply only when publishing without that workflow.
+
 The package is configured for the GitHub username linked from your existing website: **ekosman**. The intended site address is **https://ekosman.github.io/**. It becomes available after you publish. This package does not create or modify a GitHub repository automatically.
 
 ## Option 1: Publish through the GitHub website

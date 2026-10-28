@@ -302,7 +302,7 @@ document.documentElement.classList.add('js');
       card.querySelector('[data-forks]').textContent = repo.forks_count.toLocaleString();
     });
     status.textContent = 'GitHub: refreshed ' + new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}) + '.';
-  } catch { status.textContent = 'GitHub: snapshot, 26 October 2026. Live refresh unavailable.'; }
+  } catch { status.textContent = 'GitHub: snapshot, ' + status.dataset.snapshot + '. Live refresh unavailable.'; }
 })();
 
 // The discovery bar uses the publication archive's existing search and filters.

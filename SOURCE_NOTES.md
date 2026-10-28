@@ -1,5 +1,12 @@
 # Content sources and editorial notes
 
+Automation added 28 October 2026: weekly provider refreshes, DBLP/patent discovery
+reports, and GitHub Actions deployment; see `AUTOMATION.md`. Added the missing
+application US20260080284A1 from its Google Patents publication record (19 March
+2026), bringing the curated patent archive to 12 representative records. Added
+the official NeurIPS 2025 proceedings link for the latent diffusion bridge paper.
+The historical preparation notes below describe the original package.
+
 Prepared 26 October 2026. The public website contains 12 research works and 11 representative patent publications. This is the public record located during the research, not a claim that unindexed or unpublished material does not exist.
 
 ## Biography, employment, education, and service

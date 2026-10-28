@@ -1,0 +1,153 @@
+name: Refresh and publish website
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '23 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: website-publish
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Verify updater
+        run: python -m unittest discover -s source/tests -v
+      - name: Refresh data
+        if: github.event_name != 'push'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: python source/scripts/refresh.py
+      - name: Generate website
+        run: python source/scripts/build.py
+      - name: Save refreshed snapshots
+        if: github.event_name != 'push'
+        run: |
+          git add source/content/impact.json index.html assets/publications.bib
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Refresh research metrics'
+            git push origin HEAD:main
+          fi
+      - name: Save discovery report
+        if: always() && github.event_name != 'push'
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-refresh-report
+          path: refresh-report/
+          retention-days: 90
+      - name: Package public files
+        run: |
+          mkdir _site
+          cp index.html 404.html robots.txt sitemap.xml .nojekyll _site/
+          cp -r assets _site/
+          if [ -f CNAME ]; then cp CNAME _site/; fi
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  review:
+    if: github.event_name != 'push'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: research-refresh-report
+          path: refresh-report
+      - name: Prepare review branch
+        id: branch
+        run: |
+          branch=automation/research-updates
+          open_pr=$(gh pr list --head "$branch" --base main --state open --json number --jq '.[0].number // empty')
+          closed=$(gh pr list --head "$branch" --base main --state closed --json mergedAt --jq '.[0] | if . != null and .mergedAt == null then "closed" else "" end')
+          if [ -z "$open_pr" ] && [ "$closed" = closed ]; then
+            echo 'Review PR was closed without merging. Reopen it to resume proposals.' >> "$GITHUB_STEP_SUMMARY"
+            echo 'paused=true' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if git ls-remote --exit-code --heads origin "$branch"; then
+            git switch --track "origin/$branch"
+            git merge origin/main --no-edit
+          else
+            git switch -c "$branch"
+          fi
+      - name: Prepare proposed additions
+        if: steps.branch.outputs.paused != 'true'
+        run: python source/scripts/prepare_review.py
+      - name: Validate proposed website
+        if: steps.branch.outputs.paused != 'true'
+        run: |
+          python -m unittest discover -s source/tests -v
+          python source/scripts/build.py
+          # Generated pages publish only after merge; keep the PR focused on content.
+          git restore index.html assets/publications.bib
+      - name: Open or update review PR
+        if: steps.branch.outputs.paused != 'true'
+        run: |
+          branch=automation/research-updates
+          git add source/content/publications.json source/content/patents.json source/content/discovery-ignore.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Propose newly discovered research records'
+          fi
+          if git diff --quiet origin/main HEAD; then
+            echo 'No pending content proposals.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          git push origin "HEAD:$branch"
+          number=$(gh pr list --head "$branch" --base main --state open --json number --jq '.[0].number // empty')
+          if [ -n "$number" ]; then
+            gh pr edit "$number" --body-file refresh-report/pr-body.md
+          else
+            gh pr create --base main --head "$branch" --title 'Review new papers and patents' --body-file refresh-report/pr-body.md
+          fi
+          gh pr view "$branch" --json url --jq '.url' >> "$GITHUB_STEP_SUMMARY"
+      - name: Save proposal details
+        if: always() && steps.branch.outputs.paused != 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-proposal-details
+          path: refresh-report/pr-body.md
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v4
+        id: deployment

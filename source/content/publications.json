@@ -38,7 +38,8 @@
     "url": "https://arxiv.org/abs/2510.20819",
     "pdf": "https://arxiv.org/pdf/2510.20819",
     "project": "https://sites.google.com/view/lddbm/home",
-    "booktitle": "Advances in Neural Information Processing Systems"
+    "booktitle": "Advances in Neural Information Processing Systems",
+    "record": "https://papers.nips.cc/paper_files/paper/2025/hash/d5470483dd38f71f7bd9e68ce1b94145-Abstract-Conference.html"
   },
   {
     "id": "stochasticity",
@@ -59,7 +60,10 @@
     "url": "https://arxiv.org/abs/2410.01628",
     "pdf": "https://arxiv.org/pdf/2410.01628",
     "pages": "6211--6218",
-    "booktitle": "IEEE/RSJ International Conference on Intelligent Robots and Systems"
+    "booktitle": "IEEE/RSJ International Conference on Intelligent Robots and Systems",
+    "aliases": [
+      "Entropy-Based Uncertainty Modeling for Trajectory Prediction in Autonomous Driving"
+    ]
   },
   {
     "id": "motion-risk",
@@ -99,7 +103,10 @@
     "url": "https://arxiv.org/abs/2402.04046",
     "pdf": "https://arxiv.org/pdf/2402.04046",
     "record": "https://openreview.net/forum?id=pxdSm7PW5Q",
-    "journal": "Transactions on Machine Learning Research"
+    "journal": "Transactions on Machine Learning Research",
+    "aliases": [
+      "Generative Modeling of Graphs via Joint Diffusion of Node and Edge Attributes"
+    ]
   },
   {
     "id": "bosch-street",

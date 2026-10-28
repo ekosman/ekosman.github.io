@@ -14,6 +14,20 @@
     "assignee": "Robert Bosch GmbH"
   },
   {
+    "id": "US20260080284A1",
+    "title": "Method for determining an uncertainty associated with trajectory predictions of a vehicle",
+    "year": 2026,
+    "type": "Published application",
+    "date": "19 March 2026",
+    "inventors": [
+      "Aron Distelzweig",
+      "Andreas Look",
+      "Eitan Kosman"
+    ],
+    "url": "https://patents.google.com/patent/US20260080284A1/en",
+    "assignee": "Robert Bosch GmbH"
+  },
+  {
     "id": "US20260070577A1",
     "title": "Computer-implemented method for generating a control command for an autonomous vehicle",
     "year": 2026,

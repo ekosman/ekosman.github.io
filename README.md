@@ -56,7 +56,9 @@ This regenerates `index.html` and `assets/publications.bib`. Publication and pat
 
 For a quick one time change, you may edit `index.html` directly. Also make that change in `source/scripts/template.html` if you intend to use the generator later, otherwise regeneration will overwrite it.
 
-The generator does not run on GitHub. All website files are already generated. Do not configure a framework or install Node packages.
+The generator also runs in GitHub Actions on pushes and scheduled refreshes.
+See [AUTOMATION.md](AUTOMATION.md) for one-time Pages setup and the optional API key.
+No Node packages are needed.
 
 ## Local preview
 
@@ -76,4 +78,8 @@ Prepared 26 October 2026. See `SOURCE_NOTES.md` for content scope and provenance
 
 ## Impact metrics
 
-`source/content/impact.json` holds the dated Google Scholar snapshot, per paper citation counts and public repository snapshot. Update these fields and run the generator to refresh the saved figures. Citation counts are from Google Scholar on 26 October 2026. The website refreshes GitHub stars and forks on each visit using GitHub's public API, excluding repositories forked from other owners. If the API is unavailable or rate limited, dated saved figures remain visible. Google Scholar counts use the saved snapshot and link directly to the citation record. No API key is required.
+`source/content/impact.json` holds dated Scholar and GitHub snapshots. The weekly
+workflow refreshes GitHub data and, when `SERPAPI_KEY` is configured, Scholar
+metrics. It proposes newly discovered papers and patents in a review PR. Failed
+providers retain their previous snapshots and dates. GitHub counts additionally
+refresh in the visitor's browser. See [AUTOMATION.md](AUTOMATION.md).
