@@ -1,64 +1,64 @@
 {
-  "as_of": "2026-11-02",
+  "as_of": "2026-11-09",
   "source": "https://scholar.google.com/citations?user=c83p77gAAAAJ&hl=en",
-  "citations": 144,
+  "citations": 146,
   "h_index": 6,
   "i10_index": 4,
   "papers": {
     "latent-bridge": {
-      "count": 5,
+      "count": 6,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=7215072998878705583",
-      "as_of": "2026-11-02"
+      "as_of": "2026-11-09"
     },
     "stochasticity": {
       "count": 13,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=7696117392303176862,999228022907012312",
-      "as_of": "2026-11-02"
+      "as_of": "2026-11-09"
     },
     "motion-risk": {
       "count": 5,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=18151513460568622823",
-      "as_of": "2026-11-02"
+      "as_of": "2026-11-09"
     },
     "edge": {
       "count": 6,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=17143982825397459950,17491845723713283552",
-      "as_of": "2026-11-02"
+      "as_of": "2026-11-09"
     },
     "bosch-street": {
       "count": 10,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=5718214530071201240",
-      "as_of": "2026-11-02"
+      "as_of": "2026-11-09"
     },
     "text-trajectory": {
       "count": 47,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=1087912709561002658",
-      "as_of": "2026-11-02"
+      "as_of": "2026-11-09"
     },
     "graphvid": {
       "count": 6,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=10252528211986001834",
-      "as_of": "2026-11-02"
+      "as_of": "2026-11-09"
     },
     "mining": {
       "count": 1,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=3416991345535982418",
-      "as_of": "2026-11-02"
+      "as_of": "2026-11-09"
     },
     "oil-spills": {
       "count": 33,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=2931873399735564404",
-      "as_of": "2026-11-02"
+      "as_of": "2026-11-09"
     },
     "lsp": {
-      "count": 7,
+      "count": 8,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=187867757672453606,4118961853186669242",
-      "as_of": "2026-11-02"
+      "as_of": "2026-11-09"
     },
     "vision-forecasting": {
       "count": 1,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=13364858743660540056",
-      "as_of": "2026-11-02"
+      "as_of": "2026-11-09"
     }
   },
   "repositories": [
@@ -66,7 +66,7 @@
       "name": "AnomalyDetectionCVPR2018-Pytorch",
       "url": "https://github.com/ekosman/AnomalyDetectionCVPR2018-Pytorch",
       "description": "Pytorch version of - https://github.com/WaqasSultani/AnomalyDetectionCVPR2018",
-      "stars": 193,
+      "stars": 194,
       "forks": 67
     },
     {
@@ -182,5 +182,5 @@
       "forks": 0
     }
   ],
-  "github_as_of": "2026-11-02"
+  "github_as_of": "2026-11-09"
 }
