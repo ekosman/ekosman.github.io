@@ -1,64 +1,64 @@
 {
-  "as_of": "2026-11-09",
+  "as_of": "2026-11-16",
   "source": "https://scholar.google.com/citations?user=c83p77gAAAAJ&hl=en",
-  "citations": 146,
+  "citations": 148,
   "h_index": 6,
   "i10_index": 4,
   "papers": {
     "latent-bridge": {
       "count": 6,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=7215072998878705583",
-      "as_of": "2026-11-09"
+      "as_of": "2026-11-16"
     },
     "stochasticity": {
       "count": 13,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=7696117392303176862,999228022907012312",
-      "as_of": "2026-11-09"
+      "as_of": "2026-11-16"
     },
     "motion-risk": {
       "count": 5,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=18151513460568622823",
-      "as_of": "2026-11-09"
+      "as_of": "2026-11-16"
     },
     "edge": {
       "count": 6,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=17143982825397459950,17491845723713283552",
-      "as_of": "2026-11-09"
+      "as_of": "2026-11-16"
     },
     "bosch-street": {
       "count": 10,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=5718214530071201240",
-      "as_of": "2026-11-09"
+      "as_of": "2026-11-16"
     },
     "text-trajectory": {
-      "count": 47,
+      "count": 48,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=1087912709561002658",
-      "as_of": "2026-11-09"
+      "as_of": "2026-11-16"
     },
     "graphvid": {
       "count": 6,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=10252528211986001834",
-      "as_of": "2026-11-09"
+      "as_of": "2026-11-16"
     },
     "mining": {
       "count": 1,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=3416991345535982418",
-      "as_of": "2026-11-09"
+      "as_of": "2026-11-16"
     },
     "oil-spills": {
-      "count": 33,
+      "count": 34,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=2931873399735564404",
-      "as_of": "2026-11-09"
+      "as_of": "2026-11-16"
     },
     "lsp": {
       "count": 8,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=187867757672453606,4118961853186669242",
-      "as_of": "2026-11-09"
+      "as_of": "2026-11-16"
     },
     "vision-forecasting": {
       "count": 1,
       "url": "https://scholar.google.com/scholar?oi=bibs&hl=en&cites=13364858743660540056",
-      "as_of": "2026-11-09"
+      "as_of": "2026-11-16"
     }
   },
   "repositories": [
@@ -182,5 +182,5 @@
       "forks": 0
     }
   ],
-  "github_as_of": "2026-11-09"
+  "github_as_of": "2026-11-16"
 }
